@@ -36,4 +36,10 @@ public class DriverManager {
     public WebDriver getDriver(){
         return driver;
     }
+
+    public void tearDown(){
+        driver.close();
+        driver.quit();
+        driver = null;
+    }
 }
