@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public abstract class Page {
 
-    public Page(WebDriver driver){
+    public Page(WebDriver driver) {
         PageFactory.initElements(driver, this);
 
     }
@@ -24,19 +24,19 @@ public abstract class Page {
     @FindBy(xpath = "//button[@type='button'][normalize-space()='Sign in']")
     protected WebElement loginBtn;
 
-    public void acceptTermsAndConditions(){
+    public void acceptTermsAndConditions() {
         termsAndConditions.click();
     }
 
-    public void navigateToRegisterPageFromHeader(){
+    public void navigateToRegisterPageFromHeader() {
         registerBtn.click();
     }
 
-    public void selectRegisterOption(){
+    public void selectRegisterOption() {
         registerOption.click();
     }
 
-    public void loginFromHeader(){
+    public void loginFromHeader() {
         loginBtn.click();
     }
 

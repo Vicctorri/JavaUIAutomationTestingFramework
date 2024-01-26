@@ -4,8 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class RegisterPage extends Page{
-    public RegisterPage(WebDriver driver){
+public class RegisterPage extends Page {
+    public RegisterPage(WebDriver driver) {
         super(driver);
     }
 
@@ -31,18 +31,18 @@ public class RegisterPage extends Page{
     private WebElement registerOrganization;
 
 
-    public void fillInTheRegisterForm(String organizationName, String organizationContactPerson, String organizationEmail){
+    public void fillInTheRegisterForm(String organizationName, String organizationContactPerson, String organizationEmail) {
         organizationNameInput.sendKeys(organizationName);
         organizationContactPersonInput.sendKeys(organizationContactPerson);
         organizationEmailInput.sendKeys(organizationEmail);
     }
 
-    public void selectLegalResidenceOption(){
+    public void selectLegalResidenceOption() {
         organizationLegalResidence.click();
         legalResidenceOption.click();
     }
 
-    public void fillPassword(){
+    public void fillPassword() {
         organizationPasswordInput.sendKeys("1234qwer");
         try {
             Thread.sleep(1000);
@@ -51,7 +51,7 @@ public class RegisterPage extends Page{
         }
     }
 
-    public void clickRegisterButton(){
+    public void clickRegisterButton() {
         registerOrganization.click();
         try {
             Thread.sleep(1000);

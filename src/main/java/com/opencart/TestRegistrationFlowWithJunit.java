@@ -15,12 +15,12 @@ public class TestRegistrationFlowWithJunit {
     RegisterPage registerPage;
 
     @BeforeAll
-    public static void executeThisMethodBeforeAllTests(){
+    public static void executeThisMethodBeforeAllTests() {
         System.out.println("execution of test has been started");
     }
 
     @BeforeEach
-    public void executeTheCodeBeforeEachTest(){
+    public void executeTheCodeBeforeEachTest() {
         System.out.println("executed before each test");
         driver = DriverManager.getInstance().getDriver();
         driver.get("http://localhost:83/");
@@ -29,6 +29,7 @@ public class TestRegistrationFlowWithJunit {
         homePage.acceptTermsAndConditions();
 
     }
+
     @Test
     @DisplayName("The registration of the new user is successfully")
     public void registerWithValidCredentialTest() throws InterruptedException {
@@ -52,7 +53,7 @@ public class TestRegistrationFlowWithJunit {
 
     @Test
     @DisplayName("The registration failed, lacks of the Legal Residence")
-    public void registerWithInvalidData(){
+    public void registerWithInvalidData() {
         homePage.navigateToRegisterPageFromHeader();
         registerPage.selectRegisterOption();
 
@@ -70,14 +71,14 @@ public class TestRegistrationFlowWithJunit {
     }
 
     @AfterEach
-    public void executeAfterEachTest(){
+    public void executeAfterEachTest() {
         System.out.println("finished");
         DriverManager.getInstance().tearDown();
 
     }
 
     @AfterAll
-    public static void executeAfterAll(){
+    public static void executeAfterAll() {
         System.out.println("finished2");
     }
 
