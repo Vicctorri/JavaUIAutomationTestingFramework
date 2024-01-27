@@ -10,6 +10,8 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.util.Map;
+
 public class RegisterPageSteps {
     WebDriver driver = DriverManager.getInstance().getDriver();
 
@@ -45,4 +47,14 @@ public class RegisterPageSteps {
     }
 
 
+    @When("The register form is populated with the fallowing data:")
+    public void theRegisterFormIsPopulatedWithTheFallowingData(Map<String, String> formdataMap) {
+        String organizationNameValue = formdataMap.get("organizationName");
+        String contactPersonValue = formdataMap.get("contactPerson");
+        String emailInput = formdataMap.get("email");
+
+        registerPage.fillInTheRegisterForm(organizationNameValue, contactPersonValue, emailInput);
+        registerPage.selectLegalResidenceOption();
+        registerPage.fillPassword();
+    }
 }
