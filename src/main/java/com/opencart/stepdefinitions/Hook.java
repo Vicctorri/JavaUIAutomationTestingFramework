@@ -19,13 +19,14 @@ public class Hook {
 
     @After
     public void afterEachTest(){
-        DriverManager.getInstance().tearDown();
+        DriverManager.getInstance().deleteCookies();
         System.out.println("test execution finished");
 
     }
 
     @AfterAll
     public static void afterAlTests(){
+        DriverManager.getInstance().tearDown();
         System.out.println("the tests execution has been finished");
     }
 }
